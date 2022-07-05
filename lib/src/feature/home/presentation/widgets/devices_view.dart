@@ -7,12 +7,15 @@ import 'package:smart_ix_takehome/src/core/constants/app_colors.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_spacing.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_text_styles.dart';
 import 'package:smart_ix_takehome/src/core/utils/responsivness.dart';
+import 'package:smart_ix_takehome/src/feature/home/presentation/widgets/empty_state_view.dart';
+import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 
 class DeviceView extends StatelessWidget {
   const DeviceView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
     return GridView.builder(
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

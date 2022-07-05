@@ -1,7 +1,68 @@
-{
+    {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "email": "Email",
+    "@email": {
+        "description": "email"
+    },
+    "@@locale": "en",
+    "password": "Password",
+    "@password": {
+        "description": "Password"
+    },
+    
+    "@@locale": "en",
+    "signIn": "Sign In",
+    "@signIn": {
+        "description": "Sign In"
+    },
+    "@@locale": "en",
+    "welcome": "Welcome to Smart Home",
+    "@welcome": {
+        "description": "Welcome to Smart Home"
+    },
+    "@@locale": "en",
+    "devices": "Devices",
+    "@devices": {
+        "description": "Devices"
+    },
+    "@@locale": "en",
+    "routine": "Routine",
+    "@routine": {
+        "description": "Routine"
+    },
+    "@@locale": "en",
+    "service": "Service",
+    "@service": {
+        "description": "Service"
+    },
+    "@@locale": "en",
+    "addService": "Add Service",
+    "@addService": {
+        "description": "Add Service"
+    },
+    "@@locale": "en",
+    "addDevices": "Add Devices",
+    "@addDevices": {
+        "description": "Add Devices"
+    },
+    "@@locale": "en",
+    "addRoutines": "Add Routines",
+    "@addRoutines": {
+        "description": "Add Routines"
+    },
+    "@@locale": "en",
+    "noRoutine": "No routine added yet.\nTo add a routine, click on the hamburger icon on the top left corner.",
+    "@noRoutine": {
+        "description": "noRoutine"
+    },
+    "@@locale": "en",
+    "noService": "No service added yet.\nTo add a service, click on the hamburger icon on the top left corner.",
+    "@noRoutine": {
+        "description": "noService"
+    },
+    "@@locale": "en",
+    "noDevice": "No device added yet.\nTo add a device, click on the hamburger icon on the top left corner.",
+    "@noDevice": {
+        "description": "noRoutine"
     }
-}
+    }

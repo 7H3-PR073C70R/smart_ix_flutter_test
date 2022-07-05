@@ -7,7 +7,6 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(const HomeInitial());
 
   void onPageChanged(int index) {
-    emit(HomeInitial(currentPageIndex:index));
+    emit(HomeInitial(currentPageIndex: index));
   }
-  
 }

@@ -4,7 +4,6 @@ enum ServiceType {
 }
 
 extension ServicesExtension on ServiceType {
-  
   bool get isNews => this == ServiceType.news;
   bool get isWeather => this == ServiceType.weather;
 

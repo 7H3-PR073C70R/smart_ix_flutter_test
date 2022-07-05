@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 class DeviceEntity extends Equatable {
-
   const DeviceEntity({
     required this.id,
     required this.name,

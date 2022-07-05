@@ -9,6 +9,7 @@ import 'package:smart_ix_takehome/src/core/utils/responsivness.dart';
 import 'package:smart_ix_takehome/src/core/utils/validator.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/cubits/cubit/login_cubit.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/widgets/auth_input_field.dart';
+import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 import 'package:smart_ix_takehome/src/shared/svg_picture.dart';
 
 class LoginPage extends HookWidget {
@@ -21,7 +22,7 @@ class LoginPage extends HookWidget {
   Widget build(BuildContext context) {
     final emailController = useTextEditingController();
     final passwordController = useTextEditingController();
-
+    final l10n = context.l10n;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.kcBlackColor,
@@ -72,14 +73,14 @@ class LoginPage extends HookWidget {
                         children: [
                           AuthInputField(
                             keyboardType: TextInputType.emailAddress,
-                            label: 'Email',
+                            label: l10n.email,
                             controller: emailController,
                             validator: context.validateEmailAddress,
                           ),
                           AppSpacing.verticalSpaceSmall,
                           AuthInputField(
                             keyboardType: TextInputType.visiblePassword,
-                            label: 'Password',
+                            label: l10n.password,
                             obscureText: true,
                             controller: passwordController,
                             validator: context.validateFieldNotEmpty,
@@ -115,7 +116,7 @@ class LoginPage extends HookWidget {
                                 color: AppColors.kcPrimaryColor,
                               ),
                               child: Text(
-                                'sign in',
+                                l10n.signIn,
                                 style: AppTextStyles.bodyStyle.copyWith(
                                   color: AppColors.kcWhiteColor,
                                 ),

@@ -7,6 +7,7 @@ import 'package:smart_ix_takehome/src/feature/authentication/presentation/pages/
 import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_device_page.dart';
 import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_routine_page.dart';
 import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_services_page.dart';
+import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 import 'package:smart_ix_takehome/src/locator.dart';
 import 'package:smart_ix_takehome/src/services/navigation_service.dart';
 import 'package:smart_ix_takehome/src/shared/svg_picture.dart';
@@ -19,6 +20,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final navigator = locator<NavigationService>();
+    final l10n = context.l10n;
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 21,
@@ -48,7 +50,7 @@ class HomeAppBar extends StatelessWidget {
                             },
                           ),
                           child: Text(
-                            'Add Devices',
+                            l10n.addDevices,
                             style: AppTextStyles.bodyStyle,
                           ),
                         ),
@@ -62,7 +64,7 @@ class HomeAppBar extends StatelessWidget {
                             },
                           ),
                           child: Text(
-                            'Add Services',
+                            l10n.addService,
                             style: AppTextStyles.bodyStyle,
                           ),
                         ),
@@ -76,7 +78,7 @@ class HomeAppBar extends StatelessWidget {
                             },
                           ),
                           child: Text(
-                            'Add Routines',
+                            l10n.addRoutines,
                             style: AppTextStyles.bodyStyle,
                           ),
                         ),
@@ -125,7 +127,7 @@ class HomeAppBar extends StatelessWidget {
           ),
           AppSpacing.verticalSpaceSmall,
           Text(
-            'Welcome to Smart Home',
+            l10n.welcome,
             style: AppTextStyles.bodyStyle.copyWith(
               color: AppColors.kcWhiteColor,
             ),
