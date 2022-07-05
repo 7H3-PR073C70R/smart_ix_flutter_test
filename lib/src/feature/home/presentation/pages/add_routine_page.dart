@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smart_ix_takehome/src/shared/dummy/page.dart';
+import 'package:smart_ix_takehome/src/shared/page.dart';
 
 class AddRoutinePage extends StatelessWidget {
   const AddRoutinePage({super.key});

@@ -7,7 +7,7 @@ import 'package:smart_ix_takehome/src/feature/authentication/presentation/pages/
 import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_routine_page.dart';
 import 'package:smart_ix_takehome/src/locator.dart';
 import 'package:smart_ix_takehome/src/services/navigation_service.dart';
-import 'package:smart_ix_takehome/src/shared/dummy/svg_picture.dart';
+import 'package:smart_ix_takehome/src/shared/svg_picture.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({
@@ -31,8 +31,8 @@ class HomeAppBar extends StatelessWidget {
                 builder: (context) {
                   return InkWell(
                     onTap: () => navigator.navigateToNamed(
-                            AddRoutinePage.route,
-                          ),
+                      AddRoutinePage.route,
+                    ),
                     // showMenu(
                     //   context: context,
                     //   shape: _menuShape(),

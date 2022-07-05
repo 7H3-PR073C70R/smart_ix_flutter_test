@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_asset_path.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_spacing.dart';
-import 'package:smart_ix_takehome/src/shared/dummy/menu_item.dart';
-import 'package:smart_ix_takehome/src/shared/dummy/page.dart';
+import 'package:smart_ix_takehome/src/shared/menu_item.dart';
+import 'package:smart_ix_takehome/src/shared/page.dart';
 
 class AddDevicePage extends StatelessWidget {
   const AddDevicePage({super.key});

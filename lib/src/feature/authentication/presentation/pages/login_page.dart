@@ -9,7 +9,7 @@ import 'package:smart_ix_takehome/src/core/utils/responsivness.dart';
 import 'package:smart_ix_takehome/src/core/utils/validator.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/cubits/cubit/login_cubit.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/widgets/auth_input_field.dart';
-import 'package:smart_ix_takehome/src/shared/dummy/svg_picture.dart';
+import 'package:smart_ix_takehome/src/shared/svg_picture.dart';
 
 class LoginPage extends HookWidget {
   LoginPage({super.key});
