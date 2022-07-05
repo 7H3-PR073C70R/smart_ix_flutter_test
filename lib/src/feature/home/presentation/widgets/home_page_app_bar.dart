@@ -4,7 +4,9 @@ import 'package:smart_ix_takehome/src/core/constants/app_colors.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_spacing.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_text_styles.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/pages/login_page.dart';
+import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_device_page.dart';
 import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_routine_page.dart';
+import 'package:smart_ix_takehome/src/feature/home/presentation/pages/add_services_page.dart';
 import 'package:smart_ix_takehome/src/locator.dart';
 import 'package:smart_ix_takehome/src/services/navigation_service.dart';
 import 'package:smart_ix_takehome/src/shared/svg_picture.dart';
@@ -30,43 +32,56 @@ class HomeAppBar extends StatelessWidget {
               Builder(
                 builder: (context) {
                   return InkWell(
-                    onTap: () => navigator.navigateToNamed(
-                      AddRoutinePage.route,
+                    onTap: () => showMenu(
+                      context: context,
+                      shape: _menuShape(),
+                      useRootNavigator: true,
+                      position: const RelativeRect.fromLTRB(0, 55, 1, 0),
+                      items: [
+                        PopupMenuItem<Widget>(
+                          onTap: () => Future.delayed(
+                            const Duration(milliseconds: 10),
+                            () {
+                              navigator.navigateToNamed(
+                                AddDevicePage.route,
+                              );
+                            },
+                          ),
+                          child: Text(
+                            'Add Devices',
+                            style: AppTextStyles.bodyStyle,
+                          ),
+                        ),
+                        PopupMenuItem<Widget>(
+                          onTap: () => Future.delayed(
+                            const Duration(milliseconds: 10),
+                            () {
+                              navigator.navigateToNamed(
+                                AddServicePage.route,
+                              );
+                            },
+                          ),
+                          child: Text(
+                            'Add Services',
+                            style: AppTextStyles.bodyStyle,
+                          ),
+                        ),
+                        PopupMenuItem<Widget>(
+                          onTap: () => Future.delayed(
+                            const Duration(milliseconds: 10),
+                            () {
+                              navigator.navigateToNamed(
+                                AddRoutinePage.route,
+                              );
+                            },
+                          ),
+                          child: Text(
+                            'Add Routines',
+                            style: AppTextStyles.bodyStyle,
+                          ),
+                        ),
+                      ],
                     ),
-                    // showMenu(
-                    //   context: context,
-                    //   shape: _menuShape(),
-                    //   position: const RelativeRect.fromLTRB(0, 55, 1, 0),
-                    //   items: [
-                    //     PopupMenuItem<Widget>(
-                    //       onTap: () => navigator.navigateToNamed(
-                    //         AddDevicePage.route,
-                    //       ),
-                    //       child: Text(
-                    //         'Add Devices',
-                    //         style: AppTextStyles.bodyStyle,
-                    //       ),
-                    //     ),
-                    //     PopupMenuItem<Widget>(
-                    //       onTap: () => navigator.navigateToNamed(
-                    //         AddServicePage.route,
-                    //       ),
-                    //       child: Text(
-                    //         'Add Services',
-                    //         style: AppTextStyles.bodyStyle,
-                    //       ),
-                    //     ),
-                    //     PopupMenuItem<Widget>(
-                    //       onTap: () => navigator.navigateToNamed(
-                    //         AddRoutinePage.route,
-                    //       ),
-                    //       child: Text(
-                    //         'Add Routines',
-                    //         style: AppTextStyles.bodyStyle,
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
                     child: const SvgPictureAsset(
                       assetName: AppAssetPath.menuIcon,
                       color: AppColors.kcWhiteColor,
@@ -81,9 +96,14 @@ class HomeAppBar extends StatelessWidget {
                   position: const RelativeRect.fromLTRB(1, 65, 0, 0),
                   items: [
                     PopupMenuItem<Widget>(
-                      onTap: () => navigator.navigateOffAllNamed(
-                        LoginPage.route,
-                        (route) => route.isFirst,
+                      onTap: () => Future.delayed(
+                        const Duration(milliseconds: 10),
+                        () {
+                          navigator.navigateOffAllNamed(
+                            LoginPage.route,
+                            (route) => route.isFirst,
+                          );
+                        },
                       ),
                       child: const Text('Logout'),
                     ),
