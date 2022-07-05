@@ -10,7 +10,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:smart_ix_takehome/src/counter/counter.dart';
 import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 
-
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});
 

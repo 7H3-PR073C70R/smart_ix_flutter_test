@@ -1,13 +1,11 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorageService {
-
   const LocalStorageService(this._preferences);
-  
+
   final SharedPreferences _preferences;
 
   Future<void> saveToDisk<T>(String key, T content) async {
-
     if (content is String) {
       await _preferences.setString(key, content);
     }

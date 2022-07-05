@@ -5,7 +5,6 @@ import 'package:smart_ix_takehome/src/services/local_storage.dart';
 import 'package:smart_ix_takehome/src/services/navigation_service.dart';
 import 'package:smart_ix_takehome/src/services/snackbar_service.dart';
 
-
 final locator = GetIt.instance;
 
 Future<void> init() async {

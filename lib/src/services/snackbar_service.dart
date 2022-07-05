@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_colors.dart';
 
-
-
-
 class SnackbarService {
   final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 

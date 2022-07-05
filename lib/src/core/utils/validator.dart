@@ -22,8 +22,8 @@ extension ValidationExtension on BuildContext {
     if (value.isEmpty) return 'Field cannot be empty';
 
     final emailValid = RegExp(
-            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",)
-        .hasMatch(value);
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+",
+    ).hasMatch(value);
 
     return !emailValid ? 'Enter a Valid Email Address' : null;
   }
