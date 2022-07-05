@@ -7,20 +7,29 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  bloc: ^8.0.3
+ # For functional programming 
   dartz: ^0.10.1
+  # For value equality
   equatable: ^2.0.3
+
   flutter:
     sdk: flutter
+  # for state-managements
   flutter_bloc: ^8.0.1
   flutter_hooks: ^0.18.5+1
+  # for app localization
   flutter_localizations:
     sdk: flutter
-  flutter_platform_widgets: ^2.0.0
+  # for responsive design
   flutter_screenutil: ^5.5.3+2
+  # for dependency injection
+  flutter_svg: ^1.1.1+1
   get_it: ^7.2.0
+  # for formatting data like date
   intl: ^0.17.0
+  # for logging 
   logger: ^1.1.0
+  # for local storage
   shared_preferences: ^2.0.15
 
 dev_dependencies:
