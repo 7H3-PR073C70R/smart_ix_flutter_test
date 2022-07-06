@@ -7,6 +7,7 @@ import 'package:smart_ix_takehome/src/core/constants/app_spacing.dart';
 import 'package:smart_ix_takehome/src/core/constants/app_text_styles.dart';
 import 'package:smart_ix_takehome/src/core/utils/responsivness.dart';
 import 'package:smart_ix_takehome/src/core/utils/validator.dart';
+import 'package:smart_ix_takehome/src/feature/authentication/domain/entities/login_param.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/cubits/cubit/login_cubit.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/widgets/auth_input_field.dart';
 import 'package:smart_ix_takehome/src/l10n/l10n.dart';
@@ -103,8 +104,10 @@ class LoginPage extends HookWidget {
                                 context,
                                 listen: false,
                               ).onLoginButtonPressed(
-                                email: emailController.text,
-                                password: passwordController.text,
+                                param: LoginParam(
+                                  email: emailController.text,
+                                  password: passwordController.text,
+                                ),
                               );
                             },
                             child: Container(

@@ -3,14 +3,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:smart_ix_takehome/src/feature/home/domain/entities/device_entity.dart';
 import 'package:smart_ix_takehome/src/feature/home/domain/repositories/home_repository.dart';
-import 'package:smart_ix_takehome/src/feature/home/domain/usecases/add_device_usecase.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/toggle_device_usecase.dart';
 
 class HomeRepositoryMock extends Mock implements HomeRepository {}
 
 void main() {
   final respository = HomeRepositoryMock();
-  final usecase = AddDeviceUsecase(respository);
-  group('add device usecase ...', () {
+  final usecase = ToggleDeviceUsecase(respository);
+  group('toggle device usecase ...', () {
     const deviceEntity = DeviceEntity(
       id: 'id',
       name: 'name',
@@ -19,13 +19,13 @@ void main() {
     );
 
     test('''
-verify a call to [HomeRepository.addNewDevice]
+verify a call to [HomeRepository.toggleDevice]
     the right data''', () async {
-      when(() => respository.addNewDevice(deviceEntity))
+      when(() => respository.toggleDevice(deviceEntity))
           .thenAnswer((_) async => const Right(deviceEntity));
       await usecase(deviceEntity);
       verify(
-        () => respository.addNewDevice(
+        () => respository.toggleDevice(
           const DeviceEntity(
             id: 'id',
             name: 'name',

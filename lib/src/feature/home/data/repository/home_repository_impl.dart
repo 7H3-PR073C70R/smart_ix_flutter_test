@@ -86,4 +86,16 @@ class HomeRepositoryImpl implements HomeRepository {
       return Future.value(Left(ServerFailure(message: e.toString())));
     }
   }
+
+  @override
+  Future<Either<Failure, DeviceEntity>> toggleDevice(
+    DeviceEntity device,
+  ) async {
+    try {
+      final result = await remoteDataSource.toggleDevice(device);
+      return Right(result);
+    } catch (e) {
+      return Future.value(Left(ServerFailure(message: e.toString())));
+    }
+  }
 }

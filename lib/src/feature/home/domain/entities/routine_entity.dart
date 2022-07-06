@@ -4,24 +4,25 @@ class RoutineEntity extends Equatable {
   const RoutineEntity({
     required this.id,
     required this.name,
-    required this.status,
-    required this.icon,
-    this.repeatedDays,
+    required this.imagePath,
+    required this.repeatedDays,
     required this.action,
+    required this.time,
   });
 
   final String id;
   final String name;
-  final bool status;
-  final String icon;
+  final String imagePath;
   final bool action;
-  final List<String>? repeatedDays;
+  final String time;
+  final List<String> repeatedDays;
 
   @override
   List<Object> get props => [
         id,
         name,
-        status,
-        icon,
+        imagePath,
+        repeatedDays,
+        time,
       ];
 }

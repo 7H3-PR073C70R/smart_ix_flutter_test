@@ -21,11 +21,28 @@ abstract class HomeState extends Equatable {
       ];
 }
 
-class HomeInitial extends HomeState {
-  const HomeInitial({
+class HomeLoading extends HomeState {
+  const HomeLoading({
     super.currentPageIndex = 0,
     super.devices = const [],
     super.routines = const [],
     super.services = const [],
   });
+}
+
+class HomeLoaded extends HomeState {
+  const HomeLoaded({
+    super.currentPageIndex = 0,
+    super.devices = const [],
+    super.routines = const [],
+    super.services = const [],
+  });
+
+  @override
+  List<Object> get props => [
+        currentPageIndex,
+        devices,
+        routines,
+        services,
+      ];
 }

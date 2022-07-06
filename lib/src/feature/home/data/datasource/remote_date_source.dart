@@ -10,32 +10,32 @@ abstract class HomeRemoteDataSource {
   Future<List<RoutineEntity>> getAllRoutines();
   Future<ServiceEntity> addService(ServiceEntity serviceEntity);
   Future<List<ServiceEntity>> getAllServices();
+  Future<DeviceEntity> toggleDevice(DeviceEntity device);
 }
 
 class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
-
   @override
   Future<DeviceEntity> addNewDevice(DeviceEntity device) async {
-    await Future.delayed(const Duration(seconds: 1), (){});
+    await Future.delayed(const Duration(seconds: 1), () {});
     return device;
   }
 
   @override
-  Future<RoutineEntity> addNewRoutine(RoutineEntity routine) async{
-    await Future.delayed(const Duration(seconds: 1), (){});
+  Future<RoutineEntity> addNewRoutine(RoutineEntity routine) async {
+    await Future.delayed(const Duration(seconds: 1), () {});
     return routine;
   }
 
   @override
   Future<ServiceEntity> addService(ServiceEntity serviceEntity) async {
-   await Future.delayed(const Duration(seconds: 1), (){});
-   return serviceEntity;
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return serviceEntity;
   }
 
   @override
   Future<RoutineEntity> editRoutine(RoutineEntity routine) async {
-   await Future.delayed(const Duration(seconds: 1), (){});
-   return routine;
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return routine;
   }
 
   @override
@@ -51,5 +51,16 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<List<ServiceEntity>> getAllServices() {
     throw UnimplementedError();
+  }
+
+  @override
+  Future<DeviceEntity> toggleDevice(DeviceEntity device) async {
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return DeviceEntity(
+      id: device.id,
+      name: device.name,
+      icon: device.icon,
+      status: !device.status,
+    );
   }
 }

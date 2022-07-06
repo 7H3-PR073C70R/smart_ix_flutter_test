@@ -15,17 +15,17 @@ class LoginCubit extends Cubit<LoginState> {
   final NavigationService navigationService;
 
   Future<void> onLoginButtonPressed({
-    required String email,
-    required String password,
+   required LoginParam param,
   }) async {
     emit(LoginLoading());
 
     final result = await loginUseCase(
-      LoginParam(email: email, password: password),
+      param,
     );
 
     result.fold((l) => emit(LoginFailure(message: l.message)), (r) {
       if (r) {
+        emit(LoginInitial());
         navigationService.navigateOffAllNamed(
           HomePage.route,
           (route) => route.isCurrent,

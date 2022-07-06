@@ -14,9 +14,10 @@ void main() {
     const routineEntity = RoutineEntity(
       id: 'id',
       name: 'name',
-      status: true,
-      icon: 'icon',
+      imagePath: 'icon',
       action: true,
+      repeatedDays: [],
+      time: '00:00',
     );
 
     test('''
@@ -30,9 +31,10 @@ verify a call to [HomeRepository.editRoutine]
           const RoutineEntity(
             id: 'id',
             name: 'name',
-            status: true,
-            icon: 'icon',
+            imagePath: 'icon',
             action: true,
+            repeatedDays: [],
+            time: '00:00',
           ),
         ),
       );
