@@ -7,6 +7,8 @@
 
 A simple flutter app to demostract how one can manage many smart devices from mobile app.
 
+![2022-07-06_05-38-21 (2)](https://user-images.githubusercontent.com/52224298/177553820-1794da0a-88c3-458c-ab07-c9247099ec25.gif)
+
 ---
 
 ## Getting Started 🚀
