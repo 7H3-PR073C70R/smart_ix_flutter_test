@@ -18,7 +18,6 @@ void main() {
   const deviceEntity = DeviceEntity(
     id: 'id',
     name: 'name',
-    type: 'type',
     status: true,
     icon: 'icon',
   );
@@ -26,9 +25,10 @@ void main() {
   const routineEntity = RoutineEntity(
     id: 'id',
     name: 'name',
-    status: true,
-    icon: 'icon',
+    imagePath: 'icon',
     action: true,
+    repeatedDays: [],
+    time: '00:00',
   );
 
   const serviceEntity = ServiceEntity(
@@ -59,7 +59,6 @@ when [addNewDevice] is called and return the
               DeviceEntity(
                 id: 'id',
                 name: 'name',
-                type: 'type',
                 status: true,
                 icon: 'icon',
               ),
@@ -71,7 +70,6 @@ when [addNewDevice] is called and return the
             const DeviceEntity(
               id: 'id',
               name: 'name',
-              type: 'type',
               status: true,
               icon: 'icon',
             ),
@@ -88,6 +86,65 @@ the call failed expect the left side of either''', () async {
           (_) => throw Exception('error'),
         );
         final result = await repository.addNewDevice(deviceEntity);
+        expect(
+          result,
+          equals(
+            const Left<Failure, DeviceEntity>(ServerFailure(message: 'error')),
+          ),
+        );
+      });
+
+      test('''
+when [toggleDevice] is called and return the 
+        right data expect the right side of either and verify a call with the right data''',
+          () async {
+        when(
+          () => remoteDataSource.toggleDevice(deviceEntity),
+        ).thenAnswer(
+          (_) => Future.value(
+            const DeviceEntity(
+              id: 'id',
+              name: 'name',
+              status: false,
+              icon: 'icon',
+            ),
+          ),
+        );
+        final result = await repository.toggleDevice(deviceEntity);
+        expect(
+          result,
+          equals(
+            const Right<Failure, DeviceEntity>(
+              DeviceEntity(
+                id: 'id',
+                name: 'name',
+                status: false,
+                icon: 'icon',
+              ),
+            ),
+          ),
+        );
+        verify(
+          () => remoteDataSource.toggleDevice(
+            const DeviceEntity(
+              id: 'id',
+              name: 'name',
+              status: true,
+              icon: 'icon',
+            ),
+          ),
+        );
+      });
+
+      test('''
+when [toggleDevice] is called and
+the call failed expect the left side of either''', () async {
+        when(
+          () => remoteDataSource.toggleDevice(deviceEntity),
+        ).thenAnswer(
+          (_) => throw Exception('error'),
+        );
+        final result = await repository.toggleDevice(deviceEntity);
         expect(
           result,
           equals(
@@ -114,7 +171,6 @@ expect the right side of either.''', () async {
                 DeviceEntity(
                   id: 'id',
                   name: 'name',
-                  type: 'type',
                   status: true,
                   icon: 'icon',
                 ),
@@ -165,9 +221,10 @@ when [addNewRoutine] is called and return the
               RoutineEntity(
                 id: 'id',
                 name: 'name',
-                status: true,
-                icon: 'icon',
+                imagePath: 'icon',
                 action: true,
+                repeatedDays: [],
+                time: '00:00',
               ),
             ),
           ),
@@ -177,9 +234,10 @@ when [addNewRoutine] is called and return the
             const RoutineEntity(
               id: 'id',
               name: 'name',
-              status: true,
-              icon: 'icon',
+              imagePath: 'icon',
               action: true,
+              repeatedDays: [],
+              time: '00:00',
             ),
           ),
         );
@@ -219,9 +277,10 @@ when [editRoutine] is called and return the
               RoutineEntity(
                 id: 'id',
                 name: 'name',
-                status: true,
-                icon: 'icon',
+                imagePath: 'icon',
                 action: true,
+                repeatedDays: [],
+                time: '00:00',
               ),
             ),
           ),
@@ -231,9 +290,10 @@ when [editRoutine] is called and return the
             const RoutineEntity(
               id: 'id',
               name: 'name',
-              status: true,
-              icon: 'icon',
+              imagePath: 'icon',
               action: true,
+              repeatedDays: [],
+              time: '00:00',
             ),
           ),
         );
@@ -273,9 +333,10 @@ expect the right side of either.''', () async {
               RoutineEntity(
                 id: 'id',
                 name: 'name',
-                status: true,
-                icon: 'icon',
+                imagePath: 'icon',
                 action: true,
+                repeatedDays: [],
+                time: '00:00',
               )
             ]),
           ),

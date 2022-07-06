@@ -7,6 +7,11 @@ import 'package:smart_ix_takehome/src/core/router/router.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/domain/usecases/login_usecase.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/cubits/cubit/login_cubit.dart';
 import 'package:smart_ix_takehome/src/feature/authentication/presentation/pages/login_page.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/add_device_usecase.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/add_routine_usecase.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/add_services_usecase.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/edit_routine_usecase.dart';
+import 'package:smart_ix_takehome/src/feature/home/domain/usecases/toggle_device_usecase.dart';
 import 'package:smart_ix_takehome/src/feature/home/presentation/cubit/home_cubit.dart';
 import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 import 'package:smart_ix_takehome/src/locator.dart';
@@ -14,7 +19,6 @@ import 'package:smart_ix_takehome/src/services/navigation_service.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
-
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
@@ -28,7 +32,16 @@ class App extends StatelessWidget {
                 navigationService: locator<NavigationService>(),
               ),
             ),
-            BlocProvider(create: (_) => HomeCubit()),
+            BlocProvider(
+              create: (_) => HomeCubit(
+                addDeviceUsecase: locator<AddDeviceUsecase>(),
+                addRoutineUsecase: locator<AddRoutineUsecase>(),
+                addServiceUsecase: locator<AddServiceUsecase>(),
+                editRoutineUsecase: locator<EditRoutineUsecase>(),
+                navigationService: locator<NavigationService>(),
+                toggleDeviceUsecase: locator<ToggleDeviceUsecase>(),
+              ),
+            ),
           ],
           child: MaterialApp(
             theme: ThemeData(

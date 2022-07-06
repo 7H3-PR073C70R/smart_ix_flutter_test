@@ -6,6 +6,7 @@ import 'package:smart_ix_takehome/src/feature/home/domain/entities/service_entit
 
 abstract class HomeRepository {
   Future<Either<Failure, DeviceEntity>> addNewDevice(DeviceEntity device);
+  Future<Either<Failure, DeviceEntity>> toggleDevice(DeviceEntity device);
   Future<Either<Failure, List<DeviceEntity>>> getAllDevices();
   Future<Either<Failure, RoutineEntity>> addNewRoutine(RoutineEntity routine);
   Future<Either<Failure, RoutineEntity>> editRoutine(RoutineEntity routine);

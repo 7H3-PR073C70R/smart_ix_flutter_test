@@ -7,43 +7,59 @@ class MenuSelectionItem extends StatelessWidget {
     super.key,
     required this.name,
     required this.image,
+    this.onTap,
+    this.isBusy = false,
   });
 
   final String name;
   final String image;
+  final bool isBusy;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 19),
-      height: 64,
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-      ),
-      decoration: BoxDecoration(
-        color: AppColors.kcWhiteColor,
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Row(
-        children: [
-          Container(
-            height: 60,
-            width: 60,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  image,
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 19),
+        height: 64,
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 10,
+        ),
+        decoration: BoxDecoration(
+          color: AppColors.kcWhiteColor,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Row(
+          children: [
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    image,
+                  ),
+                  fit: BoxFit.contain,
                 ),
-                fit: BoxFit.contain,
               ),
             ),
-          ),
-          Text(
-            name,
-            style: AppTextStyles.bodyStyle,
-          ),
-        ],
+            Text(
+              name,
+              style: AppTextStyles.bodyStyle,
+            ),
+            if (isBusy)
+              const Expanded(
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: CircularProgressIndicator(
+                    color: AppColors.kcPrimaryColor,
+                  ),
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
