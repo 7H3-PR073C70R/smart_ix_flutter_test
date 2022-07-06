@@ -5,7 +5,6 @@ import 'package:smart_ix_takehome/src/feature/authentication/domain/entities/log
 import 'package:smart_ix_takehome/src/feature/authentication/domain/repositories/login_repository.dart';
 
 class LoginUsecase extends Usecase<bool, LoginParam> {
-
   LoginUsecase(this.authRepository);
   final AuthRepository authRepository;
 
@@ -13,5 +12,4 @@ class LoginUsecase extends Usecase<bool, LoginParam> {
   Future<Either<Failure, bool>> call(LoginParam params) {
     return authRepository.login(params);
   }
-
 }

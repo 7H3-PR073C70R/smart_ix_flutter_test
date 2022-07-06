@@ -13,19 +13,20 @@ final locator = GetIt.instance;
 
 Future<void> init() async {
 //!UseCases DI
-locator..registerLazySingleton(() => LoginUsecase(locator()))
+  locator
+    ..registerLazySingleton(() => LoginUsecase(locator()))
 
 //!DataSources DI
-  ..registerLazySingleton<AuthRemoteDataSource>(
-    AuthRemoteDataSourceImpl.new,
-  )
+    ..registerLazySingleton<AuthRemoteDataSource>(
+      AuthRemoteDataSourceImpl.new,
+    )
 
 //!Repositories DI
-  ..registerLazySingleton<AuthRepository>(
-    () => AuthRepositoryImpl(
-      locator(),
-    ),
-  );
+    ..registerLazySingleton<AuthRepository>(
+      () => AuthRepositoryImpl(
+        locator(),
+      ),
+    );
 
 //!External Services DI
   final sharedPreferences = await SharedPreferences.getInstance();

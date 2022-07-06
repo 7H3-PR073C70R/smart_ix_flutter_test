@@ -18,7 +18,6 @@ class LoginCubit extends Cubit<LoginState> {
     required String email,
     required String password,
   }) async {
-    
     emit(LoginLoading());
 
     final result = await loginUseCase(

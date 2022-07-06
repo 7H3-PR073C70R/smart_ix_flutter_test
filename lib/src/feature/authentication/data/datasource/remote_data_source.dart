@@ -2,7 +2,6 @@
 
 import 'package:smart_ix_takehome/src/feature/authentication/domain/entities/login_param.dart';
 
-
 abstract class AuthRemoteDataSource {
   Future<void> login(LoginParam param);
 }
