@@ -11,7 +11,6 @@ import 'package:smart_ix_takehome/src/feature/home/presentation/cubit/home_cubit
 import 'package:smart_ix_takehome/src/l10n/l10n.dart';
 import 'package:smart_ix_takehome/src/locator.dart';
 import 'package:smart_ix_takehome/src/services/navigation_service.dart';
-import 'package:smart_ix_takehome/src/services/snackbar_service.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -50,8 +49,6 @@ class App extends StatelessWidget {
             routes: routes,
             initialRoute: LoginPage.route,
             navigatorKey: locator<NavigationService>().navigatorKey,
-            scaffoldMessengerKey:
-                locator<SnackbarService>().scaffoldMessengerKey,
           ),
         );
       },
