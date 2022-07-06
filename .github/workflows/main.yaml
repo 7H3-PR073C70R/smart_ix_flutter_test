@@ -2,9 +2,29 @@ name: smart_ix_takehome
 
 on: [pull_request, push]
 
+# jobs:
+#   build:
+#     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+#     with:
+#       flutter_channel: stable
+#       flutter_version: 3.0.0
 jobs:
-  build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
-    with:
-      flutter_channel: stable
-      flutter_version: 3.0.0
+  flutter_test:
+    # This job will run on ubuntu virtual machine
+    runs-on: ubuntu-latest
+
+    steps:
+      # The branch or tag ref that triggered the workflow will be checked out.
+#         https://github.com/actions/checkout
+        - uses: actions/checkout@v1
+        # Setup the flutter environment.
+        - uses: subosito/flutter-action@v1
+          with:
+            channel: 'stable' # 'dev', 'alpha', default to: 'stable'
+            flutter-version: '3.0.0' # you can also specify exact version of flutter
+        - run: flutter doctor -v
+        - run: flutter clean
+        - run: flutter pub get
+        - run: flutter format .
+        - run: flutter analyze
+        - run: flutter test
