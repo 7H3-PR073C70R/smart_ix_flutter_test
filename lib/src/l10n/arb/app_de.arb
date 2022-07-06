@@ -1,7 +1,67 @@
 {
     "@@locale": "de",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
+    "email": "E-mail",
+    "@email": {
+        "description": "email"
+    },
+    "@@locale": "de",
+    "password": "Wachtwoord",
+    "@password": {
+        "description": "Password"
+    },
+    "@@locale": "de",
+    "signIn": "Log in",
+    "@signIn": {
+        "description": "Sign In"
+    },
+    "@@locale": "de",
+    "welcome": "Welkom bij Smart Home",
+    "@welcome": {
+        "description": "Welcome to Smart Home"
+    },
+    "@@locale": "de",
+    "devices": "Apparaten",
+    "@devices": {
+        "description": "Devices"
+    },
+    "@@locale": "de",
+    "routine": "Routine",
+    "@routine": {
+        "description": "Routine"
+    },
+    "@@locale": "de",
+    "service": "Onderhoud",
+    "@service": {
+        "description": "Onderhoud"
+    },
+    "@@locale": "de",
+    "addService": "Dienst toevoegen",
+    "@addService": {
+        "description": "Add Service"
+    },
+    "@@locale": "de",
+    "addDevices": "Apparaten toevoegen",
+    "@addDevices": {
+        "description": "Add Devices"
+    },
+    "@@locale": "de",
+    "addRoutines": "Routines toevoegen",
+    "@addRoutines": {
+        "description": "Add Routines"
+    },
+    "@@locale": "de",
+    "noRoutine": "Nog geen routine toegevoegd.\nOm een routine toe te voegen, klik op het hamburger icoon in de linker bovenhoek.",
+    "@noRoutine": {
+        "description": "noRoutine"
+    },
+    "@@locale": "de",
+    "noService": "Nog geen service toegevoegd.\nOm een service toe te voegen, klik je op het hamburgerpictogram in de linkerbovenhoek.",
+    "@noRoutine": {
+        "description": "noService"
+    },
+    "@@locale": "de",
+    "noDevice": "Nog geen apparaat toegevoegd.\nOm een apparaat toe te voegen, klik op het hamburgerpictogram in de linkerbovenhoek.",
+    "@noDevice": {
+        "description": "noRoutine"
     }
 }
